@@ -1,0 +1,14 @@
+{
+  "name": "qualitymap-challenge",
+  "version": "1.0.0",
+  "description": "Projeto referente ao desafio QualityMap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anderson Benicio",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.14.1"
+  }
+}
