@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("registerUser", (user) => {
+  cy.get("#gender-male").click();
+  cy.get("#FirstName").type(user.firstName);
+  cy.get("#LastName").type(user.lastName);
+  cy.get('select[name="DateOfBirthDay"]').select(user.day);
+  cy.get('select[name="DateOfBirthMonth"]').select(user.month);
+  cy.get('select[name="DateOfBirthYear"]').select(user.year);
+  cy.get("#Email").type(user.email);
+  cy.get("#Password").type(user.password);
+  cy.get("#ConfirmPassword").type(user.password);
+  cy.get("#register-button").click();
+});
+
+Cypress.Commands.add("validateErrorMessage", (selector, expectedMessage) => {
+  cy.get(selector).should("be.visible").and("have.text", expectedMessage);
+});
