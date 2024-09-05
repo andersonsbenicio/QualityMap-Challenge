@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe("User Registration Error Validation", () => {
   beforeEach(() => {
     cy.visit("/register");
