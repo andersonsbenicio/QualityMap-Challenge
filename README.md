@@ -20,70 +20,96 @@ Este projeto utiliza o Cypress para realizar testes end-to-end (E2E) na interfac
 
 ## Pré-requisitos
 
-- [Node.js](https://nodejs.org/en/) (v12.0.0 ou superior)
-- [npm](https://www.npmjs.com/) (v6.0.0 ou superior) ou [Yarn](https://yarnpkg.com/) como gerenciador de pacotes
-- [Cypress](https://www.cypress.io/) (a versão mais recente é recomendada)
+### Links de instalação
+
+- NODEJS - https://nodejs.org/en/download/package-manager
+- VSCODE - https://code.visualstudio.com/download
+
+### Documentos de referência
+
+- CYPRESS:
+  - https://www.cypress.io/
+  - https://docs.cypress.io/guides/overview/why-cypress
+  - https://on.cypress.io/configuration
 
 ## Instalação
 
-1. Clone o repositório para sua máquina local:
+1. Faça o download e instale o VSCODE ou outra IDE de sua preferência:
+   |
+
+2. Clone o repositório para sua máquina local:
 
    ```bash
    git clone https://github.com/andersonsbenicio/QualityMap-Challenge.git
    ```
 
-2. Navegue até o diretório do projeto:
+3. Navegue até o diretório do projeto:
 
    ```bash
    cd seu-repositorio
    ```
 
-3. Instale as dependências do projeto:
+4. Instale o Node.Js:
 
    ```bash
    npm install
    ```
 
-   ou, se estiver usando Yarn:
+5. Instale o framework Cypress:
 
    ```bash
-   yarn install
+   npm i cypress --save-dev
    ```
 
 ## Estrutura de Pastas
 
 A estrutura de pastas do projeto segue a convenção padrão do Cypress:
 
-````
-cypress/
-├── e2e/
-│   ├── api/
-│   │   ├── ... # Testes de integração (API)
-│   │
-│   ├── web/
-│   │   └── ... # Testes end-to-end (E2E) para a aplicação web
-├── fixtures/
-│   └── ... # Arquivos de dados de teste/massa de teste (se necessário)
-└── support/
-    └── ... # Comandos personalizados e funções utilitárias
-
+```bash
+qualitymap-challenge/
+|-- .github/
+|       ├── workflows/
+|       |      ├── ci_cypress.yml
+|-- cypress/
+|       ├── e2e/
+|       |       ├── api/
+│       │       |    ├── crud-user.cy.js
+│       │       |
+│       |       ├── web/
+│       │            ├── register_validation.cy.js
+|       |            ├── register.cy.js
+|       ├── fixtures/
+│       |       ├── resister_validation.feature
+|       |       ├── resister.feature
+|       |       ├── user_data.json
+|       |       ├── user.json
+|       |
+|       └── support/
+|             ├── commands.json
+|             ├── e2e.json
+|
+|-- .gitignore
+|-- readme.md
 
 - **`e2e/web`**: Contém testes E2E que simulam interações do usuário com a interface do usuário.
 - **`e2e/api`**: Contém testes que verificam a integração com APIs.
 - **`fixtures`**: Contém arquivos JSON que podem ser usados como mock de dados durante os testes.
 - **`support`**: Contém comandos personalizados e funções de suporte que podem ser reutilizados nos testes.
+```
 
 ## Executando os Testes
 
-Para executar os testes, utilize os seguintes comandos:
+```bash
+npx cypress run
+```
 
-### Executando os testes de interface (E2E)
+### Executando os testes de WEB
 
 Para rodar os testes end-to-end no modo headless (sem interface gráfica):
 
 ```bash
 npx cypress run --spec "cypress/e2e/web"
-````
+```
 
 Para rodar os testes end-to-end com a interface gráfica do Cypress:
 
@@ -127,3 +153,21 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 ## Licença
 
 Este projeto está licenciado sob a Licença ISC. Consulte o arquivo [LICENSE](./LICENSE) para obter mais detalhes.
+
+### Autor
+
+- Nome: Anderson de Sousa Benício;
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/andersonsbenicio">
+        <img loading="lazy" src="https://avatars.githubusercontent.com/u/73503794?v=4" width="90"><br/>
+        <sub>Anderson Benício</sub>
+      </a><br/>
+      <a href="https://www.linkedin.com/in/andersonsbenicio/">
+        <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white" alt="LinkedIn Badge">
+      </a>
+    </td>
+  </tr>
+</table>
