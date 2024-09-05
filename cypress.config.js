@@ -1,4 +1,6 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require("@shelex/cypress-allure-plugin/writer");
+//const allureWriter = require("allure-commandline");
 
 module.exports = defineConfig({
   e2e: {
@@ -9,9 +11,9 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     viewportWidth: 1920,
     viewportHeight: 1080,
-
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      allureWriter(on, config);
+      return config;
     },
   },
 });

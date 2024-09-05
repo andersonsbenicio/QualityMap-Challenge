@@ -5,3 +5,4 @@ cypress/videos
 
 # Files
 package-lock.json
+cypress/fixtures/user.json
