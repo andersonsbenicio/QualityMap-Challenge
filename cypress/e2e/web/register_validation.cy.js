@@ -1,6 +1,6 @@
 describe("User Registration Error Validation", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit("/register");
   });
 
   it("should display error messages when mandatory fields are not filled", () => {

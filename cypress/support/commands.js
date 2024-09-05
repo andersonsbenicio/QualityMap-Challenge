@@ -1,29 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
 Cypress.Commands.add("registerUser", (user) => {
   cy.get("#gender-male").click();
   cy.get("#FirstName").type(user.firstName);
@@ -38,4 +12,38 @@ Cypress.Commands.add("registerUser", (user) => {
 
 Cypress.Commands.add("validateErrorMessage", (selector, expectedMessage) => {
   cy.get(selector).should("be.visible").and("have.text", expectedMessage);
+});
+
+Cypress.Commands.add("createUser", (userData) => {
+  return cy.request({
+    method: "POST",
+    url: Cypress.env("apiUrl") + "/usuarios",
+    body: userData,
+    failOnStatusCode: false,
+  });
+});
+
+Cypress.Commands.add("getUser", (userId) => {
+  return cy.request({
+    method: "GET",
+    url: Cypress.env("apiUrl") + `/usuarios/${userId}`,
+    failOnStatusCode: false,
+  });
+});
+
+Cypress.Commands.add("updateUser", (userId, updatedUserData) => {
+  return cy.request({
+    method: "PUT",
+    url: Cypress.env("apiUrl") + `/usuarios/${userId}`,
+    body: updatedUserData,
+    failOnStatusCode: false,
+  });
+});
+
+Cypress.Commands.add("deleteUser", (userId) => {
+  return cy.request({
+    method: "DELETE",
+    url: Cypress.env("apiUrl") + `/usuarios/${userId}`,
+    failOnStatusCode: false,
+  });
 });

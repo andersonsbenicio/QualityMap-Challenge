@@ -1,9 +1,6 @@
 {
-  "firstName": "John",
-  "lastName": "Doe",
-  "day": "1",
-  "month": "January",
-  "year": "1990",
-  "email": "`john.doe${Date.now()}@example.com`",
-  "password": "Password123!"
+  "nome": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "newpassword123",
+  "administrador": "true"
 }

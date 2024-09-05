@@ -4,7 +4,7 @@ const { faker } = require("@faker-js/faker");
 
 describe("User Registration with Success", () => {
   before(() => {
-    cy.visit("https://demo.nopcommerce.com/register");
+    cy.visit("/register");
   });
 
   it("should register a new user successfully and validate date value", () => {
@@ -27,6 +27,8 @@ describe("User Registration with Success", () => {
       })}@example.com`,
       password: faker.internet.password(8, true, /[A-Za-z0-9]/, "Passw0rd!"),
     };
+
+    cy.writeFile("cypress/fixtures/user.json", user);
 
     cy.registerUser(user);
 
