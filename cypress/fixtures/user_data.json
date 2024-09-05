@@ -1,0 +1,9 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "day": "1",
+  "month": "January",
+  "year": "1990",
+  "email": "`john.doe${Date.now()}@example.com`",
+  "password": "Password123!"
+}

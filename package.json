@@ -9,6 +9,7 @@
   "author": "Anderson Benicio",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^9.0.0",
     "cypress": "^13.14.1"
   }
 }

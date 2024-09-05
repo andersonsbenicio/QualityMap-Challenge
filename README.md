@@ -54,17 +54,23 @@ Este projeto utiliza o Cypress para realizar testes end-to-end (E2E) na interfac
 
 A estrutura de pastas do projeto segue a convenção padrão do Cypress:
 
-```
-cypress
-├── fixtures         # Arquivos de dados de teste (massas de teste)
-├── integration      # Testes de integração (API)
-├── e2e              # Testes end-to-end (E2E) para a aplicação web
-├── plugins          # Plugins para Cypress
-└── support          # Comandos personalizados e funções utilitárias
-```
+````
+cypress/
+├── e2e/
+│   ├── api/
+│   │   ├── ... # Testes de integração (API)
+│   │
+│   ├── web/
+│   │   └── ... # Testes end-to-end (E2E) para a aplicação web
+├── fixtures/
+│   └── ... # Arquivos de dados de teste/massa de teste (se necessário)
+└── support/
+    └── ... # Comandos personalizados e funções utilitárias
 
+
+- **`e2e/web`**: Contém testes E2E que simulam interações do usuário com a interface do usuário.
+- **`e2e/api`**: Contém testes que verificam a integração com APIs.
 - **`fixtures`**: Contém arquivos JSON que podem ser usados como mock de dados durante os testes.
-- **`e2e`**: Contém testes E2E que simulam interações do usuário com a interface do usuário.
 - **`support`**: Contém comandos personalizados e funções de suporte que podem ser reutilizados nos testes.
 
 ## Executando os Testes
@@ -76,8 +82,8 @@ Para executar os testes, utilize os seguintes comandos:
 Para rodar os testes end-to-end no modo headless (sem interface gráfica):
 
 ```bash
-npx cypress run --spec "cypress/e2e/**/*"
-```
+npx cypress run --spec "cypress/e2e/web"
+````
 
 Para rodar os testes end-to-end com a interface gráfica do Cypress:
 
@@ -90,7 +96,7 @@ npx cypress open
 Para rodar os testes de integração da API no modo headless:
 
 ```bash
-npx cypress run --spec "cypress/integration/**/*"
+npx cypress run --spec "cypress\e2e\api"
 ```
 
 ## Comandos Personalizados
@@ -99,13 +105,20 @@ Os comandos personalizados são definidos no arquivo `cypress/support/commands.j
 
 Exemplo de comando personalizado:
 
-Adicionar Exemplo
+```javascript
+Cypress.Commands.add("login", (email, password) => {
+  cy.visit("/login");
+  cy.get("input[name=email]").type(email);
+  cy.get("input[name=password]").type(password);
+  cy.get("button[type=submit]").click();
+});
+```
 
 ## Boas Práticas
 
-- **Uso de Fixtures**: Armazene dados de teste em arquivos de fixture e reutilize-os.
+- **Uso de Fixtures**: Armazene dados de teste em arquivos de fixture e reutilize-os, caso necessário.
 - **Comandos Personalizados**: Crie comandos personalizados para reutilizar ações comuns e manter seus testes mais legíveis.
-- **Organização de Testes**: Separe os testes em pastas claras e de acordo com seu propósito (E2E vs. integração).
+- **Organização de Testes**: Separe os testes em pastas claras e de acordo com seu propósito (WEB vs. API).
 
 ## Contribuição
 

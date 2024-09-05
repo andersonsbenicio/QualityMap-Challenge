@@ -1,5 +1,7 @@
 # Folders
 node_modules
+cypress/screenshots
+cypress/videos
 
 # Files
 package-lock.json

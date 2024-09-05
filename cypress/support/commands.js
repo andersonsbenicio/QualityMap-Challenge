@@ -32,9 +32,8 @@ Cypress.Commands.add("registerUser", (user) => {
   cy.get('select[name="DateOfBirthMonth"]').select(user.month);
   cy.get('select[name="DateOfBirthYear"]').select(user.year);
   cy.get("#Email").type(user.email);
-  cy.get("#Password").type(user.password);
-  cy.get("#ConfirmPassword").type(user.password);
-  cy.get("#register-button").click();
+  cy.get("#Password").type(user.password, { log: false });
+  cy.get("#ConfirmPassword").type(user.password, { log: false });
 });
 
 Cypress.Commands.add("validateErrorMessage", (selector, expectedMessage) => {
