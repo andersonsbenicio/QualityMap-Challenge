@@ -1,9 +1,10 @@
 {
-  "firstName": "Travis",
-  "lastName": "Gutkowski",
-  "day": "30",
-  "month": "12",
-  "year": "1959",
-  "email": "Travis.Gutkowski324@example.com",
-  "password": "ipeV6IsDycMBu1r"
+  "firstName": "Joe",
+  "lastName": "Schmeler",
+  "day": "12",
+  "month": "7",
+  "year": "1989",
+  "email": "Joe.Schmeler687@example.com",
+  "companyName": "Armstrong - Thompson",
+  "password": "0aUt2jkCzNFeuep"
 }

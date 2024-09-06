@@ -1,6 +1,5 @@
 {
   "nome": "John Doe",
-  "email": "john.doe@example.com",
   "password": "newpassword123",
   "administrador": "true"
 }
