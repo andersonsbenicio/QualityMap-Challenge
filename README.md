@@ -16,7 +16,7 @@ Este repositório contém um conjunto de testes automatizados para uma aplicaç�
 
 ## Visão Geral
 
-Este projeto utiliza o Cypress para realizar testes end-to-end (E2E) na interface do usuário de uma aplicação web e testes de integração para a API da mesma aplicação. Os testes verificam a funcionalidade, a usabilidade e a integridade da aplicação.
+Este projeto utiliza o Cypress para realizar testes end-to-end (E2E) na interface do usuário de uma aplicação web (https://demo.nopcommerce.com/) e testes de API da aplicação ServeRest (https://serverest.dev/). Os testes verificam a funcionalidade, a usabilidade e a integridade da aplicação.
 
 ## Pré-requisitos
 
@@ -31,6 +31,8 @@ Este projeto utiliza o Cypress para realizar testes end-to-end (E2E) na interfac
   - https://www.cypress.io/
   - https://docs.cypress.io/guides/overview/why-cypress
   - https://on.cypress.io/configuration
+- ALLURE
+  - https://allurereport.org/docs/cypress/
 
 ## Instalação
 

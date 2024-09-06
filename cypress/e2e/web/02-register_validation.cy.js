@@ -3,7 +3,7 @@
 // Suite de testes para validar erros de registro de usuário
 describe("User Registration Error Validation", () => {
   beforeEach(() => {
-    cy.visit("/register"); // URL do endpoint de registro
+    cy.visit("/register?returnUrl=%2F"); // URL do endpoint de registro
   });
 
   it("should display error messages when mandatory fields are not filled", () => {

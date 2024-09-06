@@ -5,7 +5,7 @@ const { faker } = require("@faker-js/faker");
 
 describe("User Registration with Success", () => {
   beforeEach(() => {
-    cy.visit("/register"); // URL do endpoint de registro
+    cy.visit("/register?returnUrl=%2F"); // URL do endpoint de registro
   });
 
   it("should register a new user successfully and validate date value", () => {
@@ -48,7 +48,7 @@ describe("User Registration with Success", () => {
 
     // Verifica se a mensagem de registro bem-sucedido é exibida
     // cy.get(".result")
-    //     .should("be.visible")
-    //     .should("have.text", "Your registration completed");
+    //   .should("be.visible")
+    //   .should("have.text", "Your registration completed");
   });
 });
